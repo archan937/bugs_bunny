@@ -1,0 +1,55 @@
+h1. Bugs Bunny Demo
+
+A Unicorn served Sinatra application which uses Bunny (a Ruby AMQP 0.9.1 client) to broadcast messages to every Unicorn worker.
+
+This requires an AMQP message server, such as RabbitMQ, in order to publish and receive messages.
+
+h2. Installation
+
+Install RabbitMQ:
+
+<pre>
+  $ brew install rabbitmq
+</pre>
+
+See also: http://www.rabbitmq.com/install-homebrew.html
+
+Install the required gems:
+
+<pre>
+  $ bundle install
+</pre>
+
+Note: Sinatra, Unicorn and Bunny will be installed
+
+h2. Run the demo
+
+Run the RabbitMQ server:
+
+<pre>
+  $ rabbitmq-server
+</pre>
+
+Run the operator:
+
+<pre>
+  $ ruby operator.rb
+</pre>
+
+Run the Sinatra app:
+
+<pre>
+  $ unicorn -c config/unicorn.rb
+</pre>
+
+Open the demo in your browser:
+
+<a href="http://localhost:8080">http://localhost:8080</a>
+
+Enjoy and spread the word! :D
+
+h2. Contact me
+
+For remarks and requests please mail me at "paul.engel@holder.nl":mailto:paul.engel@holder.nl.
+
+"http://holder.nl":http://holder.nl – "http://codehero.es":http://codehero.es – "http://gettopup.com":http://gettopup.com – "http://github.com/archan937":http://github.com/archan937 – "http://twitter.com/archan937":http://twitter.com/archan937 – "paul.engel@holder.nl":mailto:paul.engel@holder.nl

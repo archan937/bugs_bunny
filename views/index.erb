@@ -1,0 +1,65 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      archan937@github: /bugs_bunny - demo [<%= Process.pid %>]
+    </title>
+    <link href="/style.css" type="text/css" rel="stylesheet" media="screen"/>
+  </head>
+  <body>
+    <div id="page">
+      <div id="page_wrapper">
+        <div id="page_header">
+          <h1>
+            <a href="https://github.com/archan937/bugs_bunny">Bugs Bunny [<%= Process.pid %>]</a>
+          </h1>
+          <h2>A Unicorn served Sinatra app which uses Bunny to broadcast messages to every worker</h2>
+        </div>
+        <ul id="page_menu">
+          <li>
+            <a href="https://github.com/archan937/bugs_bunny">Github repository</a>
+          </li>
+          <li class="separator">-</li>
+          <li>
+            Download
+            <a href="http://github.com/archan937/bugs_bunny/zipball/master">ZIP</a>
+            /
+            <a href="http://github.com/archan937/bugs_bunny/tarball/master">TAR</a>
+          </li>
+          <li class="separator">-</li>
+          <li>
+            <a href="http://twitter.com/archan937">@archan937</a>
+          </li>
+          <li class="separator">-</li>
+          <li>
+            <a href="mailto:paul.engel@holder.nl">@holder.nl</a>
+          </li>
+        </ul>
+        <div id="page_content">
+          <form action="/write" method="POST">
+            <input type="text" id="message" name="message" class="message" placeholder="Type a message"></input><input type="submit" value="Submit"></input>
+          </form>
+          <h3>Bugs.messages (<%= Bugs.messages.object_id %>)</h3>
+          <% if Bugs.messages.empty? %>
+            <p style="padding-left: 10px">No messages yet</p>
+          <% else %>
+            <ul>
+              <% Bugs.messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+          <% end %>
+          <script>
+            document.getElementById("message").focus();
+          </script>
+        </div>
+      </div>
+    </div>
+    <div id="page_footer">
+      made by
+      <a href="mailto:paul.engel@holder.nl">Paul Engel</a>
+      <span class="separator">-</span>
+      <a href="http://holder.nl">Internetbureau Holder B.V.</a>
+    </div>
+  </body>
+</html>

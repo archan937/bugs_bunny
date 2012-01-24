@@ -1,3 +1,4 @@
+require 'rubygems' if RUBY_VERSION < "1.9"
 require "bunny"
 
 Bunny.new.tap do |bunny|

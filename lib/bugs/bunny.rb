@@ -3,7 +3,7 @@ Thread.new do
     bunny.start
     exchange = bunny.exchange "bugs"
 
-    queue = bunny.queue "bugs.workers.#{Process.pid}"
+    queue = bunny.queue "bugs.workers.#{Process.pid}", :auto_delete => true
     queue.bind exchange, :key => "workers"
 
     puts "[#{Process.pid}] Worker listening ..."
